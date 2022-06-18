@@ -28,12 +28,16 @@ function anagrama(palabra1,palabra2){
     return false;
 }
 
-anagrama("roma","amor");
-anagrama("roma","roma");
-anagrama("roma","rama");
+console.log(anagrama("roma","amor"));
+console.log(anagrama("roma","roma"));
+console.log(anagrama("roma","rama"));
 
 function ordenar(palabra){
-    palabra.sort((a, b) => {
+    let lista = [];
+    for(let letra of palabra){
+        lista.push(letra);
+    }
+    lista.sort((a, b) => {
         if (a > b) {
             return 1;
         }
@@ -42,5 +46,5 @@ function ordenar(palabra){
         }
         return 0;
     });
-    return palabra;
+    return lista;
 }
