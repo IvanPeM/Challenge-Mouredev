@@ -7,34 +7,33 @@
  * Fecha publicación resolución: 10/01/22
  * Dificultad: MEDIA
  *
- * Enunciado: Escribe una función que reciba dos palabras (String) y retorne verdadero o falso (Bool) según sean o no anagramas.
- * Un Anagrama consiste en formar una palabra reordenando TODAS las letras de otra palabra inicial.
+ * Enunciado: Escribe una función que reciba dos palabras (String) y 
+ * retorne verdadero o falso (Bool) según sean o no anagramas.
+ * Un Anagrama consiste en formar una palabra reordenando TODAS las letras 
+ * de otra palabra inicial.
  * NO hace falta comprobar que ambas palabras existan.
  * Dos palabras exactamente iguales no son anagrama.
  *
- * Información adicional:
- * - Usa el canal de nuestro discord (https://mouredev.com/discord) "🔁reto-semanal" para preguntas, dudas o prestar ayuda a la comunidad.
- * - Puedes hacer un Fork del repo y una Pull Request al repo original para que veamos tu solución aportada.
- * - Revisaré el ejercicio en directo desde Twitch el lunes siguiente al de su publicación.
- * - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
  */
-function anagrama(palabra1,palabra2){
-    if(palabra1 == palabra2){
+function anagrama(palabra1, palabra2) {
+    if (palabra1 == palabra2) {
         return false;
     }
-    if(ordenar(palabra1) == ordenar(palabra2)){
+    let p1 = ordenar(palabra1);
+    let p2 = ordenar(palabra2);
+    if (comprobar(p1,p2)) {
         return true;
     }
     return false;
 }
 
-console.log(anagrama("roma","amor"));
-console.log(anagrama("roma","roma"));
-console.log(anagrama("roma","rama"));
+console.log(anagrama("roma", "amor"));
+console.log(anagrama("roma", "roma"));
+console.log(anagrama("roma", "rama"));
 
-function ordenar(palabra){
+function ordenar(palabra) {
     let lista = [];
-    for(let letra of palabra){
+    for (let letra of palabra) {
         lista.push(letra);
     }
     lista.sort((a, b) => {
@@ -47,4 +46,13 @@ function ordenar(palabra){
         return 0;
     });
     return lista;
+}
+
+function comprobar(p1, p2) {
+    for (let i = 0; i < p1.length; i++) {
+        if(p1[i] != p2[i]){
+            return false;
+        }
+    }
+    return true;
 }
