@@ -14,6 +14,8 @@
  * NO hace falta comprobar que ambas palabras existan.
  * Dos palabras exactamente iguales no son anagrama.
  *
+ * @param {String} palabra1
+ * @param {String} palabra2
  */
 function anagrama(palabra1, palabra2) {
     if (palabra1 == palabra2) {
