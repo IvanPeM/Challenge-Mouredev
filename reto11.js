@@ -15,5 +15,7 @@
  * @param {String} tex2 
  */
 function eliminarCaracteres(tex1,tex2){
+    let out1 = "";
+    let out2 = "";
     
 }
