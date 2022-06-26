@@ -16,7 +16,26 @@
  * @param {String} texto
  */
 function contarPalabras(texto){
-
+    let palabras = [];
+    let pal = "";
+    for(let letra of texto){
+        if(letra == " "){
+            palabras.push(pal);
+            pal = "";
+        }else{
+            pal += letra;
+        }
+    }
+    let contador = 0;
+    for(let i = 0;i< palabras.length;i++){
+        for(let j = 0;j<palabras.length;j++){
+            if(palabras[i] == palabras[j]){
+                contador++;
+            }
+        }
+        console.log(palabras[i]," : ",contador);
+        contador = 0;
+    }
 }
 
-contarPalabras("");
+contarPalabras("hola buenas a todos amigos buenas ");
