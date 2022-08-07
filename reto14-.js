@@ -15,5 +15,15 @@
  */
 function armstrong(n){
     let boo = false;
+    let suma = 0;
+    for(let num of n){
+        suma += Math.pow(num,n.length);
+    }
+    if(suma == n){
+        boo = true;
+    }
     return boo;
 }
+
+console.log(armstrong("372"));
+console.log(armstrong("371"));
