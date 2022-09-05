@@ -20,3 +20,5 @@
 function cuantosDias(fecha1, fecha2){
     
 }
+
+console.log(cuantosDias("",""));
