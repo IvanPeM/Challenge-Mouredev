@@ -16,6 +16,7 @@
  */
 function morse(texto) {
     let mor = "";
+    let text = "";
     let codigo = {
         "A": ".—", "N": "—.", "0": "—————",
         "B": "—...", "Ñ": "——.——", "1": ".————",
@@ -32,10 +33,29 @@ function morse(texto) {
         "L": ".—..", "Y": "—.——", "?": "..——..",
         "M": "——", "Z": "——..", "\"": ".—..—.", "/": "—..—."
     };
-    for(let letra of texto){
-        mor += codigo[letra];
+
+    if (typeof (texto) == String) {
+        for (let letra of texto) {
+            mor += codigo[letra] + " ";
+        }
+        console.log(mor, " que era ", texto);
+    } else {
+        let letra = "";
+        for (let i = 0; i <= texto.length; i++) {
+            if (texto[i] == " " || i == texto.length) {
+                for (let letraa in codigo) {
+                    if (letra == codigo[letraa]) {
+                        text += letraa;
+                        letra = "";
+                    }
+                }
+            } else {
+                letra += texto[i];
+            }
+        }
+        console.log(text, " que era ", texto);
     }
-    console.log(mor);
 }
 
 morse("HOLA");
+morse(".... ——— .—.. .—");
